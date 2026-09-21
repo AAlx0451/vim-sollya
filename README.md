@@ -1,5 +1,5 @@
 ## Vim-Sollya
-This repo provides [Sollya](sollya.com) Vim syntax highlighting.
+This repo provides [Sollya](https://sollya.org) Vim syntax highlighting.
 
 ## Installation
 ```vim
