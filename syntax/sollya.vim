@@ -85,7 +85,7 @@ syn match   sollyaBinNumber    display "\<[01]\+\(\.[01]\+\)\?_2\>"
 " Dyadic numbers (e.g. 69b-2, 330700b-165)
 syn match   sollyaDyadicNumber display "\<\d\+b[+-]\?\d\+\>"
 " Midpoint notation (e.g. 0.17~2/5~e5)
-syn match   sollyaMidpoint     display "\d\+\(\.\d\+\)\?~\d\+\(/\d\+\)\?~\(e[+-]\?\d\+\)\?"
+syn match   sollyaMidpoint     display "\d\+\(\.\d\+\)\?~\d\+\(/\d\+\)\?\~\(e[+-]\?\d\+\)\?"
 " Precision-annotated constants (e.g. %24%0.1)
 syn match   sollyaPrecNumber   display "%\d\+%\d\+\(\.\d\+\)\?\(e[+-]\?\d\+\)\?"
 " Decimal integers and standard floats
