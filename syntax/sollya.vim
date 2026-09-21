@@ -21,13 +21,6 @@ syn keyword sollyaDeclaration  var
 syn keyword sollyaFreeVar      _x_
 syn keyword sollyaPredefVar    __argv __unique_id __program_name
 
-" Booleans and special constants
-syn keyword sollyaBoolean      true false
-syn keyword sollyaSpecialConst void error default on off pi
-syn keyword sollyaSpecialConst infty NaN
-syn match   sollyaSpecialConst '@NaN@'
-syn match   sollyaSpecialConst '@Inf@'
-
 " Display and rounding modes
 syn keyword sollyaMode         decimal binary dyadic powers hexadecimal
 syn keyword sollyaRoundingMode RN RD RU RZ
@@ -67,12 +60,6 @@ syn keyword sollyaFunction     sqrt subpoly substitute sup supnorm suppressmessa
 syn keyword sollyaFunction     tail tan tanh taylor taylorform taylorrecursions
 syn keyword sollyaFunction     time timing unsuppressmessage verbosity worstcase write
 
-" Comments
-syn keyword sollyaTodo         contained TODO FIXME XXX BUG NOTE
-syn match   sollyaCommentLine  '//.*$' contains=sollyaTodo,@Spell
-syn match   sollyaCommentLine  '#.*$' contains=sollyaTodo,@Spell
-syn region  sollyaCommentBlock start='/\*' end='\*/' contains=sollyaTodo,@Spell
-
 " Strings and escape sequences
 syn match   sollyaEscape       display contained '\\\([ntrvabf?''"\\]\|x\x\{2\}\|[0-7]\{1,3\}\)'
 syn region  sollyaString       start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=sollyaEscape,@Spell
@@ -105,6 +92,19 @@ syn match   sollyaDelimiter    '[;,]'
 " Sollya list brackets [| and |]
 syn match   sollyaListBracket  '\[|'
 syn match   sollyaListBracket  '|\]'
+
+" Comments
+syn keyword sollyaTodo         contained TODO FIXME XXX BUG NOTE
+syn match   sollyaCommentLine  '//.*$' contains=sollyaTodo,@Spell
+syn match   sollyaCommentLine  '#.*$' contains=sollyaTodo,@Spell
+syn region  sollyaCommentBlock start='/\*' end='\*/' contains=sollyaTodo,@Spell
+
+" Booleans and special constants
+syn keyword sollyaBoolean      true false
+syn keyword sollyaSpecialConst void error default on off pi
+syn keyword sollyaSpecialConst infty NaN
+syn match   sollyaSpecialConst '@NaN@'
+syn match   sollyaSpecialConst '@Inf@'
 
 " Highlighting links
 hi def link sollyaConditional       Conditional
