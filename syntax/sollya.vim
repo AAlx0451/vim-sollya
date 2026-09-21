@@ -25,8 +25,8 @@ syn keyword sollyaPredefVar    __argv __unique_id __program_name
 syn keyword sollyaBoolean      true false
 syn keyword sollyaSpecialConst void error default on off pi
 syn keyword sollyaSpecialConst infty NaN
-syn match   sollyaSpecialConst "@NaN@"
-syn match   sollyaSpecialConst "@Inf@"
+syn match   sollyaSpecialConst '@NaN@'
+syn match   sollyaSpecialConst '@Inf@'
 
 " Display and rounding modes
 syn keyword sollyaMode         decimal binary dyadic powers hexadecimal
@@ -36,7 +36,7 @@ syn keyword sollyaFileType     file postscript postscriptfile
 
 " Types
 syn keyword sollyaType         boolean constant function integer range string object
-syn match   sollyaType         "list\s\+of"
+syn match   sollyaType         'list\s\+of'
 
 " Numerical formats
 syn keyword sollyaFormat       halfprecision single double doubleextended
@@ -69,42 +69,42 @@ syn keyword sollyaFunction     time timing unsuppressmessage verbosity worstcase
 
 " Comments
 syn keyword sollyaTodo         contained TODO FIXME XXX BUG NOTE
-syn match   sollyaCommentLine  "//.*$" contains=sollyaTodo,@Spell
-syn match   sollyaCommentLine  "#.*$" contains=sollyaTodo,@Spell
-syn region  sollyaCommentBlock start="/\*" end="\*/" contains=sollyaTodo,@Spell
+syn match   sollyaCommentLine  '//.*$' contains=sollyaTodo,@Spell
+syn match   sollyaCommentLine  '#.*$' contains=sollyaTodo,@Spell
+syn region  sollyaCommentBlock start='/\*' end='\*/' contains=sollyaTodo,@Spell
 
 " Strings and escape sequences
-syn match   sollyaEscape       display contained "\\\([ntrvabf?\'\"\\]\|x\x\{2\}\|[0-7]\{1,3\}\)"
+syn match   sollyaEscape       display contained '\\\([ntrvabf?''"\\]\|x\x\{2\}\|[0-7]\{1,3\}\)'
 syn region  sollyaString       start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=sollyaEscape,@Spell
 
 " Numbers and numeric literals
 " Hexadecimal floats (e.g. 0x1.14p4, 0x4031400000000000)
-syn match   sollyaHexNumber    display "\<0x[0-9a-fA-F]\+\(\.[0-9a-fA-F]\+\)\?\(p[+-]\?\d\+\)\?\>"
+syn match   sollyaHexNumber    display '\<0x[0-9a-fA-F]\+\(\.[0-9a-fA-F]\+\)\?\(p[+-]\?\d\+\)\?\>'
 " Binary literals (e.g. 1.000101_2, 1_2)
-syn match   sollyaBinNumber    display "\<[01]\+\(\.[01]\+\)\?_2\>"
+syn match   sollyaBinNumber    display '\<[01]\+\(\.[01]\+\)\?_2\>'
 " Dyadic numbers (e.g. 69b-2, 330700b-165)
-syn match   sollyaDyadicNumber display "\<\d\+b[+-]\?\d\+\>"
+syn match   sollyaDyadicNumber display '\<\d\+b[+-]\?\d\+\>'
 " Midpoint notation (e.g. 0.17~2/5~e5)
-syn match   sollyaMidpoint     display "\d\+\(\.\d\+\)\?~\d\+\(/\d\+\)\?\~\(e[+-]\?\d\+\)\?"
+syn match   sollyaMidpoint     display '\d\+\(\.\d\+\)\?\~\d\+\(/\d\+\)\?\~\(e[+-]\?\d\+\)\?'
 " Precision-annotated constants (e.g. %24%0.1)
-syn match   sollyaPrecNumber   display "%\d\+%\d\+\(\.\d\+\)\?\(e[+-]\?\d\+\)\?"
+syn match   sollyaPrecNumber   display '%\d\+%\d\+\(\.\d\+\)\?\(e[+-]\?\d\+\)\?'
 " Decimal integers and standard floats
-syn match   sollyaNumber       display "\<\d\+\(\.\d\+\)\?\(e[+-]\?\d\+\)\?\>"
+syn match   sollyaNumber       display '\<\d\+\(\.\d\+\)\?\(e[+-]\?\d\+\)\?\>'
 
 " Operators and delimiters
-syn match   sollyaOperator     "[-+*/^!]"
-syn match   sollyaOperator     ":="
-syn match   sollyaOperator     "="
-syn match   sollyaOperator     "==\|!=\|<=\|>=\|<\|>"
-syn match   sollyaOperator     "&&\|||"
-syn match   sollyaOperator     "@"
-syn match   sollyaOperator     "\.\:\|\:\."
-syn match   sollyaOperator     "\~"
-syn match   sollyaDelimiter    "[;,]"
+syn match   sollyaOperator     '[-+*/^!]'
+syn match   sollyaOperator     ':='
+syn match   sollyaOperator     '='
+syn match   sollyaOperator     '==\|!=\|<=\|>=\|<\|>'
+syn match   sollyaOperator     '&&\|||'
+syn match   sollyaOperator     '@'
+syn match   sollyaOperator     '\.\:\|\:\.'
+syn match   sollyaOperator     '\~'
+syn match   sollyaDelimiter    '[;,]'
 
 " Sollya list brackets [| and |]
-syn match   sollyaListBracket  "\[|"
-syn match   sollyaListBracket  "|\]"
+syn match   sollyaListBracket  '\[|'
+syn match   sollyaListBracket  '|\]'
 
 " Highlighting links
 hi def link sollyaConditional       Conditional
